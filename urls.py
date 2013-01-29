@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^appserver', 'app_test.views.appserver', name='appserver'),
     url(r'^serverid', 'app_test.views.serverid', name='serverid'),
     url(r'^dbread', 'app_test.views.dbread', name='dbread'),
+    url(r'^solr', 'app_test.views.solr', name='solr'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

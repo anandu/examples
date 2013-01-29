@@ -22,3 +22,16 @@ def dbread(request, template_file="dbread.html"):
   rows = cursor.fetchall()
   t = Context({'results': rows})
   return render_to_response(template_file, t)
+
+def solr(request, template_file="solr.html"):
+  from solr_conf import *
+  s = solr.SolrConnection(host)
+  def ping(self):
+    rsp  = self._post(self.path + '/admin/ping', '', self.form_headers)
+    data = rsp.read()
+    return data.find('<str name="status">OK</str>') != -1
+  out = ping(s)
+  if out == True :
+    out = "succeeded"
+  t = Context ({"status": out})
+  return render_to_response(template_file, t)
