@@ -10,7 +10,7 @@ include '../config/solr_conf.php';
 
 $options = array
 (
-   'hostname' => "$hostname_SOLR",
+   'hostname' => "$host",
    'port'     => '8983',
    'timeout'  => '2',
 );
